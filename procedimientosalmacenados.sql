@@ -1,3 +1,4 @@
+
 create or replace 
 procedure hola_mundo(nombre in varchar2) 
 as
@@ -32,3 +33,32 @@ insert into pelicula values(MY_ID_PELICULA,MY_TITULO, MY_SYNOPSIS, MY_CLASIFICAC
 END GUARDAR_PELICULA;
 -- el ultimo
 
+--esto es otro codigo secuencia 
+create sequence sec_pelicula
+                    start with 1
+                    increment by 1
+                    nomaxvalue;
+                    
+ --estos son lo procedimientos lel                   
+                    
+set serveroutput on;
+
+create or replace procedure hola_mundo(nombre in varchar2) 
+as
+begin 
+--aqui va la logica 
+dbms_output.put_line('hola como estas'||nombre);
+end;
+/
+begin
+hola_mundo('alejandro');
+
+end;
+/
+declare
+valor number;
+begin 
+suma(12,8,valor);
+dbms_output.put_line('la suma es '||valor);
+end;
+/
