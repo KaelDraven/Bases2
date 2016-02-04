@@ -1,0 +1,50 @@
+create table pelicula (id_pelicula integer, 
+                        titulo varchar2(120),
+                        sinopsis varchar2(500),
+                        clasificacion varchar2(5),
+                        constraint pk_id_pelicula primary key(id_pelicula) 
+                        );
+
+
+create table horarios(id_horario integer,
+                      id_pelicula integer,
+                      horario varchar2(8),
+                      constraint pk_id_horario primary key(id_horario),
+                      constraint fk1_id_pelicula foreign key(id_pelicula) references pelicula (id_pelicula));
+                      
+
+
+--esto es otro codigo secuencia 
+create sequence sec_pelicula
+                    start with 1
+                    increment by 1
+                    nomaxvalue;
+                    
+ --estos son lo procedimientos lel                   
+                    
+set serveroutput on;
+
+
+declare
+valor number;
+begin 
+suma(12,8,valor);
+dbms_output.put_line('la suma es '||valor);
+end;
+/
+
+
+
+declare 
+valor integer;
+begin
+guardar_peli(valor,'el renacido','esta masomenos','B15');
+end;
+/
+
+select * from pelicula where id_pelicula=3;
+
+create table direccion(id_direccion integer, calle varchar(120), numero integer,colonia varchar(120),
+            constraint pk_id_direccion primary key(id_direccion) 
+                        );
+
